@@ -8,7 +8,7 @@ const linkStyling = "text-[#F2F0E4] text-0.5xl";
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
 const variantClasses = {
   textlink: "text-black",
-  primary: "cursor-pointer bg-emerald-800 text-white hover:bg-rose-200 p-1 rounded-xlcursor-pointer border-2 border-white rounded-full border-double drop-shadow bg-slate-800 text-stone-50 p-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-linear-to-r from-cyan-500 to-blue-700 font-(family-name:<custom-property>)",
+  primary: "inline-block rounded-full border-2 border-neutral-800 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-800 transition duration-150 ease-in-out hover:border-neutral-800 hover:bg-neutral-100 hover:text-neutral-800 focus:border-neutral-800 focus:bg--100 focus:text-neutral-800 focus:outline-none focus:ring-0 active:border-neutral-900 active:text-neutral-900 motion-reduce:transition-none dark:text-neutral-600 dark:hover:bg-neutral-900 dark:focus:bg--900",
   secondary: "bg-lime-500 hover:bg-lime-700",
 };
 
@@ -17,9 +17,11 @@ const sizeClasses = {
   inline: "",
   large: "p-6",
   medium: "p-4",
-  small: "p-1",
+  small: "sm",
 };
 ---
 
 <!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
 <a href={href} target={target} class:list={[linkStyling, variantClasses[variant], sizeClasses[size]]}><slot /></a>
+
+
