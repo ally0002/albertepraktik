@@ -1,5 +1,32 @@
 ---
+import Link from "../components/Link.astro";
 ---
-<div>
-Header - tilføj navigation mm.
+
+<div x-data="{ showmenu: false }" class="p-4 fixed lg:static w-full bg-white">
+  <header id="navbar" class="flex flex-row justify-between items-center">
+    <div id="logo">
+      <a href="/">
+        <img class="w-7 lg:w-10" src="/public/Mitlogo.svg" alt="Skraldespand Logo" />
+      </a>
+    </div>
+    <nav id="desktopmenu" class="hidden lg:block">
+      <ul class="flex flex-row gap-6 font-bold text-lg lg:text-xl">
+        <li class="animate-pulse"><Link href="#hvemerjeg">Hvem er jeg?</Link></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
+        <li class="animate-pulse"><Link href="#kompetencer">Kompetencer</Link></li>
+        <li class="animate-pulse"><Link href="https://www.linkedin.com/in/alberte-lynglev-b0011b257/">LinkedIn</Link></li>
+      </ul>
+    </nav>
+    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu" aria-expanded="showmenu" aria-label="Åbn mobilmenu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+  </header>
+  <nav id="mobilmenu" class="flex flex-col content-center pt-4" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
+    <ul class="text-center font-bold bg-white pb-10 space-y-4">
+      <li class="animate-pulse"><Link href="#hvemerjeg">Hvem er jeg?</Link></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
+      <li class="animate-pulse"><Link href="#kompetencer">Kompetencer</Link></li>
+      <li class="animate-pulse"><Link href="https://www.linkedin.com/in/alberte-lynglev-b0011b257/">LinkedIn</Link></li>
+    </ul>
+  </nav>
 </div>
