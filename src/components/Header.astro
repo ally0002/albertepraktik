@@ -2,7 +2,7 @@
 import Link from "../components/Link.astro";
 ---
 
-<div x-data="{ showmenu: false }" class="p-4 fixed lg:static w-full bg-white">
+<div x-data="{ showmenu: false }" class="p-4 fixed lg:static w-full bg-white color-change-2x">
   <header id="navbar" class="flex flex-row justify-between items-center">
     <div id="logo">
       <a href="/">
@@ -23,7 +23,7 @@ import Link from "../components/Link.astro";
     </button>
   </header>
   <nav id="mobilmenu" class="flex flex-col content-center pt-4" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
-    <ul class="text-center font-bold bg-white pb-10 space-y-4">
+    <ul class="text-center font-bold bg-white pb-10 space-y-4 color-change-2x">
       <li class="animate-pulse"><Link href="#hvemerjeg">Hvem er jeg?</Link></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
       <li class="animate-pulse"><Link href="#kompetencer">Kompetencer</Link></li>
       <li class="animate-pulse"><Link href="https://www.linkedin.com/in/alberte-lynglev-b0011b257/">LinkedIn</Link></li>
